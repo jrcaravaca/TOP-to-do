@@ -1,0 +1,41 @@
+form {
+    display: flex;
+    gap: 10px;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+form input {
+    padding: 10px;
+}
+
+form button{
+    padding: 10px;
+    max-width: 100px;
+    border: 0;
+    font-size: 16px;
+}
+
+.buttoncancel{
+    background-color: #FF6961;
+}
+
+.buttonadd {
+    background-color: #AFDD6E;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    justify-content: space-between;
+}
+
+.task button {
+    background-color: #FF6961;
+    padding: 5px;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+
+}

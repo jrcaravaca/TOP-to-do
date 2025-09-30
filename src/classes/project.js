@@ -1,4 +1,4 @@
-import { Todo } from "./todo"
+import { Todo } from "./task"
 
 class Project {
     constructor(name) {
