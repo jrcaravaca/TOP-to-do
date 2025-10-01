@@ -1,17 +1,13 @@
-import { Todo } from "./task"
+import { addTask } from "../components/addButton"
+import { Task } from "./task"
 
 class Project {
     constructor(name) {
         this.name = name
-        this.todos = []
+        this.pedingTask = []
     };
 
-    newTodo(title, dueDate, priority, description) {
-        const todo = new Todo(title, dueDate, priority, description)
-        
-        this.todos.push(todo); 
-    }
-
+   
 }; 
 
 export { Project }

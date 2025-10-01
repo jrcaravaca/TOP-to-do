@@ -1,10 +1,33 @@
-import { addTaskForm } from "./components/addTaskForm.js";
+import { addItem, projects } from "./components/addButton.js";
+import { Project } from "./classes/project.js";
 import "./styles.css"; 
+ 
+const projectContainer = document.getElementById('project-container')
+const buttonAddProject = document.getElementById('add-project')
 
-const taskContainer = document.getElementById('task-container'); 
-const buttonAddTask = document.getElementById('add-task')
+const savedProjects = JSON.parse(localStorage.getItem("projects"));
+if (savedProjects && Array.isArray(savedProjects)) {
+    projects.length = 0; // Limpia el array original
+    savedProjects.forEach(p => {
+        // Reconstruye como instancia de Project
+        const project = new Project(p.name);
+        projects.push(project);
 
-buttonAddTask.addEventListener('click', (event) => {
+        // Renderiza el botón en el DOM
+        const projectButton = document.createElement('button');
+        projectButton.textContent = project.name;
+        projectContainer.appendChild(projectButton);
+    });
+}
+
+buttonAddProject.addEventListener('click', (event) => {
     event.preventDefault()
-    addTaskForm(taskContainer)
+    addItem(projectContainer, projects)
 })
+
+
+
+
+
+
+
