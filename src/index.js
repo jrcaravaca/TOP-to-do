@@ -1,22 +1,28 @@
 import { addItem, projects } from "./components/addButton.js";
 import { Project } from "./classes/project.js";
 import "./styles.css"; 
+import { renderProject } from "./functions/renderProjects.js";
  
 const projectContainer = document.getElementById('project-container')
 const buttonAddProject = document.getElementById('add-project')
+const inbox = document.getElementById('inbox')
 
 const savedProjects = JSON.parse(localStorage.getItem("projects"));
 if (savedProjects && Array.isArray(savedProjects)) {
-    projects.length = 0; // Limpia el array original
+    projects.length = 0; 
     savedProjects.forEach(p => {
-        // Reconstruye como instancia de Project
-        const project = new Project(p.name);
+        const project = new Project(p.name, p.tasks);
         projects.push(project);
-
-        // Renderiza el botón en el DOM
+        
+ 
         const projectButton = document.createElement('button');
         projectButton.textContent = project.name;
         projectContainer.appendChild(projectButton);
+
+        projectButton.addEventListener('click', (e) => {
+            e.preventDefault
+            renderProject(project, inbox)
+        })
     });
 }
 
@@ -25,7 +31,7 @@ buttonAddProject.addEventListener('click', (event) => {
     addItem(projectContainer, projects)
 })
 
-
+export { savedProjects }
 
 
 

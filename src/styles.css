@@ -63,7 +63,7 @@ main {
 .project-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 #add-task {
@@ -75,8 +75,24 @@ main {
     padding: 10px;
 }
 
+.sidebar h2{
+    margin-bottom: 5px;
+}
+
+.inbox button {
+    max-width: 100px;
+    padding: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
 .inbox button:hover{
     background-color: #DDDDDD;
+}
+
+.project-container button {
+    background-color: #DDDDDD;
+    cursor: pointer;
 }
 
 
@@ -85,4 +101,24 @@ footer {
     padding: 25px;
     text-align: center;
     color: white;
+}
+
+.task-container article {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.remove {
+    background-color: #FF6961;
+}
+
+.complete, .add {
+   background-color: #AFDD6E;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
 }

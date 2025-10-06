@@ -2,11 +2,15 @@ import { addTask } from "../components/addButton"
 import { Task } from "./task"
 
 class Project {
-    constructor(name) {
+    constructor(name, tasks = []) {
         this.name = name
-        this.pedingTask = []
+        this.tasks = tasks
     };
 
+    addTask(name) {
+        const task = new Task(name)
+        this.tasks.push(task)
+    }
    
 }; 
 

@@ -27,11 +27,15 @@ export function addItem(container, array) {
         container.appendChild(projectButton)
         container.removeChild(newItem)
         localStorage.setItem("projects", JSON.stringify(projects));
+        location.reload()
     })
 
+    const buttonContainer = document.createElement('div')
+
     newItem.appendChild(newItemInput)
-    newItem.appendChild(addItemButton)
-    newItem.appendChild(cancelButton)
+    buttonContainer.appendChild(addItemButton)
+    buttonContainer.appendChild(cancelButton)
+    newItem.appendChild(buttonContainer)
 
     container.appendChild(newItem)
 }

@@ -9,8 +9,12 @@ class Task{
         this.dueDate = date; 
     }
 
-    completeTask() {
-        this.completed = true; 
+    changeStatus() {
+        if (this.completed) {
+            this.completed = false
+        } else {
+            this.completed = true
+        }
     }
     
 }
